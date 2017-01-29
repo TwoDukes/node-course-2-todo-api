@@ -32,7 +32,7 @@ describe('Post /todos', () => {
       });
   });
 
-  it('should not create a new todo with invalid data', (done) => {
+  it('should not create a new todo with invalid body data', (done) => {
 
     request(app)
       .post('/todos')
