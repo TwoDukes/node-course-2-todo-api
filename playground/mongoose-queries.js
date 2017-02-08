@@ -3,32 +3,17 @@ const {Todo} = require('./../server/models/todo');
 const {User} = require('./../server/models/user');
 const {ObjectID} = require('mongodb');
 
-// var id = '588e85ee1473f731588dc4b511';
-//
-// if (!ObjectID.isValid(id)){
-//   console.log('ID not valid');
-// }
-
-// Todo.find({
-//   _id: id
-// }).then((todos) => {
-//   console.log('Todos', todos);
-// });
-//
-// Todo.findOne({
-//   _id: id
-// }).then((todo) => {
-//   console.log('Todo', todo);
+// Todo.remove({}).then((result) => {
+//   console.log(result);
 // });
 
-// Todo.findById(id).then((todo) => {
-//   if(!todo) return console.log('Id not found');
-//   console.log('Todo By Id', todo);
-// }).catch((e) => console.log(e));
+// Todo.findOneAndRemove()
+// Todo.findByIdAndRemove()
 
-User.findById('5886cbd17b523f1e0892f806').then((user) => {
-  if(!user) return console.log('Unable to find user');
-  console.log('user', user);
-}, (e) => {
-  console.log(e);
+Todo.findOneAndRemove({_id: '589a6674a4528f40b97a8bd8'}).then((todo) => {
+  console.log(todo);
+});
+
+Todo.findByIdAndRemove('589a6674a4528f40b97a8bd8').then((todo) => {
+  console.log(todo);
 });
